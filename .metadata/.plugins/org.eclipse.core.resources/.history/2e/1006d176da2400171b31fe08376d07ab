@@ -12,7 +12,7 @@ public class game {
 		
 		BeginSession();
 		
-		//initiate new tilecdvs
+		//initiate new tile
          CellGrid grid = new CellGrid();
 		//while loop to make sure screen stays on
 		//while we are not hitting exit button, proceed
