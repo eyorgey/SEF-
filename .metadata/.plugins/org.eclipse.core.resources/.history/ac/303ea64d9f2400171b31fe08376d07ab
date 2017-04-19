@@ -1,0 +1,26 @@
+package Data;
+
+import org.newdawn.slick.opengl.Texture;
+
+public class Cell {
+
+	private float x, y, width, height;
+	private Texture texture;
+	
+	//make constructor and set to what they =
+	public Cell(float x, float y, float width, float height, Texture texture) {
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.setHeight(height);
+		
+	}
+
+	public float getHeight() {
+		return height;
+	}
+
+	public void setHeight(float height) {
+		this.height = height;
+	}
+}

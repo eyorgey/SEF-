@@ -1,0 +1,19 @@
+package Data;
+
+public enum CellType {
+ 
+	//true = buildable
+	//identify two different textures
+	Cement ("tile1", true), Black ("tile2", false);
+	
+	
+	String TextureName;
+	boolean buildable;
+	
+	
+	
+	CellType(String textureName, boolean buildable) {
+		this.textureName = textureName;
+		this.buildable = buildable;
+	}
+}

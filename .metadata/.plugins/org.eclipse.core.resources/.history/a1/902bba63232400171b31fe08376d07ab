@@ -1,0 +1,51 @@
+package Data;
+
+import org.lwjgl.LWJGLException;
+import org.lwjgl.opengl.Display;
+import org.lwjgl.opengl.DisplayMode;
+
+//import everything * from GL Library
+import static org.lwjgl.opengl.GL11.*;
+
+//Display and initial setup in helper class
+import static helpers.Translator.*;
+
+public class game {
+    
+	public game() {
+		
+		BeginSession();
+		
+		//CELL SIZE
+		float width = 50;
+		float height = 50;
+		float x = 100; //starting co-ordinates 
+		float y = 100; 
+		
+		
+		
+		//while loop to make sure screen stays on
+		//while we are not hitting exit button, proceed
+		while(!Display.isCloseRequested()) {
+			glBegin(GL_QUADS);
+			//parameters: beginning and end point of line
+			
+			glVertex2f(x, y); //TOP LEFT VERTICE
+			glVertex2f(x + width, y); //TOP RIGHT VERTICE
+			glVertex2f(x + width, y + height); //BOTTOM RIGHT VERTICE
+			glVertex2f(x, y + height); //BOTTOM LEFT VERTICE
+			glEnd();
+			
+			
+			Display.update();
+			Display.sync(60);
+		}
+		//destroy the display
+		Display.destroy();
+	}
+
+
+	public static void main(String[] args) {
+		new game();
+	}
+}

@@ -1,0 +1,31 @@
+package Data;
+
+
+import static helpers.Translator.LoadTexture;
+
+import org.newdawn.slick.opengl.Texture;
+
+public class Cell {
+
+	private float x, y, width, height;
+	private Texture texture;
+	private CellType type;
+	
+	//make constructor and set to what they =
+	public Cell(float x, float y, float width, float height, CellType type) {
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
+		this.type = type;
+		this.texture = QuickLoad(type.textureName);
+		
+	}
+	
+	//make public to share between classes
+	private Texture QuickLoad(String name) {
+		Texture tex=null;
+		tex = LoadTexture("resources/" + name + ".png", "PNG");
+		return tex;
+	}
+}
